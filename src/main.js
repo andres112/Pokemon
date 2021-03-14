@@ -37,7 +37,7 @@ Vue.use(PrettyCheckbox);
 
 // Configuration VueAnalytics
 Vue.use(VueAnalytics, {
-  id: "UA-189236636-1",
+  id: process.env.VUE_APP_GOOGLE_ANALYTICS,
   router, //Automatic google analytics tracking
 });
 

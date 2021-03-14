@@ -4,7 +4,7 @@ import "firebase/auth"; // Lib in charge of authentication in firebase
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBFKZWaEpKVtJgl-TlWmvsuM6nsvhARY2g",
+  apiKey: process.env.VUE_APP_FIREBASE_API,
   authDomain: "pokemon-afdd.firebaseapp.com",
   databaseURL: "https://pokemon-afdd.firebaseio.com",
   projectId: "pokemon-afdd",
