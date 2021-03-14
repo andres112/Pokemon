@@ -1,5 +1,5 @@
 # Pokemon API testiong
-https://pokeapi.co/api
+https://pokeapi.co
 
 ## Project setup
 ```
