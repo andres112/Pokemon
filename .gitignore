@@ -22,9 +22,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Build files for firestore
-.firebaserc
-firebase.json
-firestore.indexes.json
-firestore.rules
 *.cache
