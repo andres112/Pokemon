@@ -29,6 +29,9 @@
       "species-label": "Species",
       "search-input": "Searching...",
       "details-modal-button": "Details"
+    },
+    "notfound": {
+      "message": "Page not found"
     }
   },
   "es": {
@@ -61,6 +64,9 @@
       "species-label": "Especies",
       "search-input": "Buscar...",
       "details-modal-button": "Detalles"
+    },
+    "notfound": {
+      "message": "Página no encontrada"
     }
   }
 }

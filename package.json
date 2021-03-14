@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",    
-    "postbuild": "react-snap",
-    "deploy": "vue-cli-service build && firebase deploy"
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

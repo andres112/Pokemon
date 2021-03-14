@@ -52,6 +52,11 @@ const routes = [
       import(/* webpackChunkName: "photo" */ "../views/Photo.vue"),
     meta: { requiresAuth: true },
   },
+  {
+    path: "*",
+    component: () =>
+      import(/* webpackChunkName: "photo" */ "../views/NotFound.vue"),
+  },
 ];
 
 const router = new VueRouter({
