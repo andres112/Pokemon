@@ -74,6 +74,15 @@ img {
   margin: 20px;
   margin-bottom: 50px;
 }
+.menu {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .btn-group-vertical > button {
   margin-bottom: 10px;
 }

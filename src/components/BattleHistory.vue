@@ -98,6 +98,7 @@ export default {
 li {
   font-family: "Baloo Da 2", cursive;
   font-weight: 400;
+  background-color: #2c3e50;
 }
 .head-time {
   font-weight: 700;

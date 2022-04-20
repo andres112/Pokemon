@@ -17,6 +17,10 @@
         :per-page="perPage"
         align="center"
         aria-controls="my-table"
+        pills
+        first-number
+        last-number
+        class="poke-pagination"
       ></b-pagination>
       <p>{{ this.pokemonList.length }} {{ $t("pokepedia.species-label") }}</p>
       <div class="col-sm-10 mx-auto">
@@ -29,6 +33,7 @@
           small
           responsive
           striped
+          dark
         >
           <!-- button in url column -->
           <template v-slot:cell(url)="row">
@@ -171,9 +176,34 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss">
 .pokeImage {
   width: 35%;
   height: auto;
+}
+.poke-pagination {
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #d9d9d9 !important;
+    background-color: #4f4f4f !important;
+    border: 1px solid #262626 !important;
+  }
+  .page-link:hover {
+    z-index: 2;
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #FD3D30!important;
+    border-color: #FD3D30;
+  }
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #FD3D30!important;
+    border-color: #FD3D30;
+  }
 }
 </style>

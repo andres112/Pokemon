@@ -1,18 +1,18 @@
 <template>
   <div>
-    <b-navbar toggleable="md" type="dark" variant="danger" class="align-center">
+    <b-navbar toggleable="md" type="dark" class="align-center navBar">
       <b-container>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav-collapse">
           <b-navbar-nav class="text-left">
             <b-nav-item :to="{ name: 'Menu' }" exact
-              ><strong>{{$t('header.nav-menu')}}</strong>
+              ><strong>{{ $t("header.nav-menu") }}</strong>
             </b-nav-item>
             <b-nav-item :to="{ name: 'Pokepedia' }"
               ><strong>Pokepedia</strong>
             </b-nav-item>
             <b-nav-item :to="{ name: 'History' }" v-if="isSessionOn"
-              ><strong>{{$t('header.nav-history')}}</strong>
+              ><strong>{{ $t("header.nav-history") }}</strong>
             </b-nav-item>
             <!-- dropdown to change the $i18n.locale tag -->
             <b-nav-item-dropdown
@@ -52,3 +52,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.navBar {
+  background-color: #FD3D30;
+}
+</style>
