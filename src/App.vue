@@ -9,13 +9,13 @@
   </div>
 </template>
 <script>
-import Head from "@/components/Head.vue";
+import Head from "@/components/Head.vue"
 
 export default {
   components: {
     "app-head": Head,
   },
-};
+}
 </script>
 
 <style>
@@ -26,7 +26,9 @@ export default {
   text-align: center;
   color: #fff;
   background-color: #2c3e50;
-  height: 100vh;
+}
+html {
+  background-color: #2c3e50;
 }
 
 .img404 {

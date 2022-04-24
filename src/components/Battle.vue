@@ -14,7 +14,7 @@
       :color="'#fd3d30'"
       class="justify-content-center my-2"
     ></sync-loader>
-    <b-row class=" justify-content-between">
+    <b-row class=" justify-content-between" v-if="players.length > 0">
       <b-col cols="12" md="5">
         <h3 v-bind:style="[{ color: players[0].color }]">
           {{ players[0].name }} - {{ checkgender(players[0].gender) }}
@@ -152,12 +152,12 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
-import support from "@/assets/scripts/functions.js";
-import router from "@/router";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex"
+import support from "@/assets/scripts/functions.js"
+import router from "@/router"
 
 //Spinner library
-import Loader from "vue-spinner/src/SyncLoader.vue";
+import Loader from "vue-spinner/src/SyncLoader.vue"
 
 export default {
   name: "Battle",
@@ -167,34 +167,38 @@ export default {
   computed: {
     ...mapState({
       players: (state) => state.battle.players,
-      load: (state) => state.pokemon.load,
+      load: (state) => state.pokemon.load
     }),
+    ...mapGetters({ isSessionOn: "userStore/isSessionOn" }),
   },
   methods: {
     ...mapMutations({ selectPokemon: "battle/selectPokemon" }),
     ...mapActions({
       getPokemons: "pokemon/getPokemons",
-      getDetails: "pokemon/getDetails",
+      getDetails: "pokemon/getDetails"
     }),
 
-    // Parcular functions to this component
+    // Particular functions to this component
     checkImage(image) {
-      return support.checkImage(image);
+      return support.checkImage(image)
     },
     checkgender(gender) {
-      return support.checkgender(gender);
+      return support.checkgender(gender)
     },
     pokemonDetails(name) {
       // push the dynamic route to the router, trigger a route
       // this.$router.push({ name: "Pokemon", params: { id: name } });
-      router.push({ name: "Pokemon", params: { id: name } });
+      router.push({ name: "Pokemon", params: { id: name } })
     },
   },
   created() {
     // this allows to dispatch an action just when DOM is loaded
-    this.getPokemons();
+    this.getPokemons()
+    if (!this.isSessionOn || this.players.length == 0) {
+      this.$router.push({ name: "Menu" })
+    }
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -202,7 +206,7 @@ export default {
 .container {
   margin-top: 20px;
 }
-td{
+td {
   cursor: pointer;
 }
 .img_button {
