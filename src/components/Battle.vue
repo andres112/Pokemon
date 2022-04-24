@@ -152,7 +152,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations, mapGetters } from "vuex"
+import { mapState, mapActions, mapMutations } from "vuex"
 import support from "@/assets/scripts/functions.js"
 import router from "@/router"
 
@@ -169,7 +169,6 @@ export default {
       players: (state) => state.battle.players,
       load: (state) => state.pokemon.load
     }),
-    ...mapGetters({ isSessionOn: "userStore/isSessionOn" }),
   },
   methods: {
     ...mapMutations({ selectPokemon: "battle/selectPokemon" }),
@@ -194,9 +193,6 @@ export default {
   created() {
     // this allows to dispatch an action just when DOM is loaded
     this.getPokemons()
-    if (!this.isSessionOn || this.players.length == 0) {
-      this.$router.push("/")
-    }
   },
 }
 </script>
