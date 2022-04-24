@@ -195,7 +195,7 @@ export default {
     // this allows to dispatch an action just when DOM is loaded
     this.getPokemons()
     if (!this.isSessionOn || this.players.length == 0) {
-      this.$router.push({ name: "Menu" })
+      this.$router.push("/")
     }
   },
 }
